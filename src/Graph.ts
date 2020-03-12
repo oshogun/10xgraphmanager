@@ -39,11 +39,7 @@ class Graph {
         let edges = 0;
         const keys = this.adjList.keys();
         for (let i of keys) {
-            let list = this.adjList.get(i);
-            if (list) {
-                edges += list.length;
-            }
-            
+            edges += this.adjList.get(i)!.length;
         }
         edges /= 2; // because there are edges in both vertices' lists
         return edges;
